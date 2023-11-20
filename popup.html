@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatGPT Custom Instructions Manager</title>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+  </head>
+  <body>
+    <h1>ChatGPT Custom Instructions Switcher</h1>
+    <div class="p-3">
+      <div id="instructions-box">
+        <div class="instruction-selector">
+          <div class="row">
+            <div class="col-3 align-bottom">
+              <label for="instructions" class="float-end"
+                >Instruction Set:</label
+              >
+            </div>
+            <div class="col-6">
+              <select
+                id="instructions"
+                class="form-select form-select-sm"
+                aria-label=".form-select-sm example"
+              ></select>
+            </div>
+            <div class="col-3">
+              <button class="btn btn-secondary btn-sm" id="edit-instruction">
+                Edit
+              </button>
+              <button
+                class="btn btn-danger btn-sm float-end"
+                id="delete-instruction"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="row mt-2">
+              <div class="col-3 align-bottom">
+                <a
+                  class="float-end"
+                  href="https://github.com/tf318/chatgpt-custom-instruction-switcher"
+                  target="_ghex"
+                  >&#9432; Info</a
+                >
+              </div>
+              <div class="col-3">
+                <button
+                  class="btn btn-primary btn-sm mb-2 float-start"
+                  id="apply-instruction"
+                >
+                  OK
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  class="btn btn-secondary btn-sm mb-2 float-end"
+                  id="new-instruction"
+                >
+                  + New Custom Instruction Set
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        id="back-button"
+        class="btn btn-secondary btn-sm mb-2"
+        style="display: none"
+      >
+        &#8592; Back
+      </button>
+
+      <div id="instruction-form" style="display: none">
+        <label for="name">Custom Instruction Set Name:</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control form-control-sm mb-2"
+          placeholder="Enter setting name"
+        />
+        <label for="know-about"
+          >What would you like ChatGPT to know about you to provide better
+          responses?</label
+        >
+        <textarea
+          id="know-about"
+          class="form-control form-control-sm mb-2"
+          maxlength="1500"
+        ></textarea>
+        <label for="about_model_message"
+          >How would you like ChatGPT to respond:</label
+        >
+        <textarea
+          id="about_model_message"
+          class="form-control form-control-sm mb-3"
+          maxlength="1500"
+        ></textarea>
+        <button id="save-instruction" class="btn btn-secondary btn-sm mb-2">
+          Save Changes
+        </button>
+      </div>
+
+      <div id="new-instruction-form" style="display: none">
+        <label for="new-name">Custom Instruction Set Name:</label>
+        <input
+          type="text"
+          id="new-name"
+          class="form-control form-control-sm mb-2"
+          placeholder="Enter a name for your Custom Instruction Set"
+        />
+        <label for="new-know-about"
+          >What would you like ChatGPT to know about you to provide better
+          responses?</label
+        >
+        <textarea
+          id="new-know-about"
+          class="form-control form-control-sm mb-2"
+          maxlength="1500"
+        ></textarea>
+        <label for="new-about_model_message"
+          >How would you like ChatGPT to respond:</label
+        >
+        <textarea
+          id="new-about_model_message"
+          class="form-control form-control-sm mb-3"
+          maxlength="1500"
+        ></textarea>
+        <button class="btn btn-secondary btn-sm mb-2" id="save-new-instruction">
+          Create
+        </button>
+      </div>
+    </div>
+    <!--<script src="bootstrap.bundle.min.js"></script>-->
+    <script src="defaultInstructions.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
