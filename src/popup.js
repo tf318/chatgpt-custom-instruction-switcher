@@ -43,14 +43,15 @@ function setup() {
     }
     chrome.storage.local.get("instructions", (data) => {
       const instructions = data.instructions || [];
-      $("instructions").innerHTML = instructions
-        .map(
-          (instruction, index) =>
-            `<option value="${index}" ${
-              currentMatches(instruction) ? "selected" : ""
-            }>${instruction.name}</option>`
-        )
-        .join("");
+      const selectElement = $("instructions");
+      while (selectElement.options.length > 0) selectElement.remove(0);
+      instructions.forEach(function (instruction, index) {
+        var optionElement = document.createElement("option");
+        optionElement.value = index;
+        optionElement.text = instruction.name;
+        if (currentMatches(instruction)) optionElement.selected = true;
+        selectElement.add(optionElement);
+      });
       $("instruction-form").style.display = "none";
       idx = null;
       if (instructions.length == 0) {

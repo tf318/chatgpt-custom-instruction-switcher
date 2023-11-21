@@ -5,6 +5,7 @@
       "16": "images/icon16.png",
       "48": "images/icon48.png"
     },
+    "default_title": "ChatGPT Custom Instruction Switcher",
     "default_popup": "popup.html"
   },
   "content_scripts": [
@@ -13,11 +14,17 @@
       "matches": ["https://chat.openai.com/*"]
     }
   ],
-  "description": "Allows you to create and maintain multiple sets of custom instructions for use with ChatGPT's free web interface, and to switch between them whenever you want.",
+  "description": "Create and maintain multiple sets of custom instructions for ChatGPT's free web interface. Switch between them whenever you want.",
   "icons": {
     "128": "images/icon128.png",
     "16": "images/icon16.png",
     "48": "images/icon48.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fb6ed9ca-87c9-11ee-b9d1-0242ac120002@2bbe057e-87ca-11ee-b9d1-0242ac120002",
+      "strict_min_version": "109.0"
+    }
   },
   "manifest_version": 3,
   "name": "ChatGPT Custom Instruction Switcher",
